@@ -317,13 +317,13 @@ public class BuiltInPrintService extends PrintService {
                 .setAction(ACTION_CERTIFICATE_REJECT)
                 .putExtra(EXTRA_PRINTER_ID, printerId);
         PendingIntent pendingRejectIntent = PendingIntent.getService(this, CERTIFICATE_REQUEST_ID,
-                rejectIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+                rejectIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification.Action rejectAction = new Notification.Action.Builder(
                 Icon.createWithResource(this, R.drawable.ic_printservice),
                 getString(R.string.reject), pendingRejectIntent).build();
 
         PendingIntent deleteIntent = PendingIntent.getService(this, CERTIFICATE_REQUEST_ID,
-                rejectIntent,  PendingIntent.FLAG_IMMUTABLE);
+                rejectIntent, 0);
 
         Intent acceptIntent = new Intent(this, BuiltInPrintService.class)
                 .setAction(ACTION_CERTIFICATE_ACCEPT)
@@ -333,7 +333,7 @@ public class BuiltInPrintService extends PrintService {
             acceptIntent.putExtra(EXTRA_CERTIFICATE, certificate);
         }
         PendingIntent pendingAcceptIntent = PendingIntent.getService(this, CERTIFICATE_REQUEST_ID,
-                acceptIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+                acceptIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification.Action acceptAction = new Notification.Action.Builder(
                 Icon.createWithResource(this, R.drawable.ic_printservice),
                 getString(R.string.accept), pendingAcceptIntent).build();
