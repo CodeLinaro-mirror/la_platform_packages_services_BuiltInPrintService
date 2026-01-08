@@ -60,8 +60,9 @@
     <string name="forget" msgid="892068061425802502">"Elimină"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Se conectează prin Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Se conectează prin rețeaua curentă la <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
-    <string name="recommendation_summary" msgid="2979700524954307566">"Serviciul de printare prestabilit oferă opțiuni de bază. Alte opțiuni pentru această imprimantă pot fi disponibile din alt serviciu de printare."</string>
+    <string name="recommendation_summary" msgid="6005124008945335822">"Serviciul de printare prestabilit oferă opțiuni de bază. Pentru opțiunile avansate sunt disponibile servicii de printare suplimentare."</string>
     <string name="recommendations_heading" msgid="5609754983795588470">"Servicii recomandate"</string>
+    <string name="recommendation_link" msgid="8702939483024020023">"Servicii de printare suplimentare"</string>
     <string name="recommendation_install_summary" msgid="374785283809791669">"Selectează pentru a instala"</string>
     <string name="recommendation_enable_summary" msgid="3500907868251326224">"Selectează pentru a activa"</string>
     <string name="recommendation_manage" msgid="6861960243377871340">"Gestionează serviciile"</string>
@@ -76,4 +77,28 @@
     <string name="wifi_direct_permission_rationale" msgid="4671416845852665202">"Serviciul de imprimare prestabilită necesită permisiunea Dispozitive din apropiere pentru a găsi imprimante în apropiere."</string>
     <string name="fix" msgid="7784394272611365393">"Vezi permisiunea"</string>
     <string name="print" msgid="7851318072404916362">"Printează"</string>
+    <string name="yes" msgid="8146135396781327533">"Da"</string>
+    <string name="unknown" msgid="9141700614096334947">"Necunoscut"</string>
+    <string name="printer_name" msgid="518518465578369850">"Numele imprimantei"</string>
+    <string name="status" msgid="7895525662471923742">"Stare"</string>
+    <string name="media_ready" msgid="8259402637635303256">"Dimensiunile hârtiei încărcate"</string>
+    <string name="supply_levels" msgid="3292306109407433125">"Niveluri de aprovizionare"</string>
+    <string name="information" msgid="894176958646461459">"Informații"</string>
+    <string name="printer_ready" msgid="6343136701327532305">"Gata"</string>
+    <string name="printer_state__printing" msgid="7991962306019119834">"Printare"</string>
+    <string name="printer_state__offline" msgid="2381616555357221771">"Offline"</string>
+    <string name="printer_state__check_printer" msgid="882936062938150000">"Verifică imprimanta"</string>
+    <string name="marker_level_cyan" msgid="5726099418534404112">"Cyan. %1$d%%"</string>
+    <string name="marker_level_magenta" msgid="3221219396554669048">"Magenta. %1$d%%"</string>
+    <string name="marker_level_yellow" msgid="4648577001843680880">"Galben. %1$d%%"</string>
+    <string name="marker_level_black" msgid="4206328790507150925">"Negru. %1$d%%"</string>
+    <string name="marker_level_red" msgid="3907122722653274794">"Roșu. %1$d%%"</string>
+    <string name="marker_level_green" msgid="2532882384172262884">"Verde. %1$d%%"</string>
+    <string name="marker_level_blue" msgid="6696226663941024544">"Albastru. %1$d%%"</string>
+    <string name="marker_level_ltgray" msgid="7833155421911775625">"Gri deschis. %1$d%%"</string>
+    <string name="marker_level_dkgray" msgid="7337253190239376395">"Gri închis. %1$d%%"</string>
+    <string name="marker_level_ltcyan" msgid="558183623562750614">"Cyan deschis. %1$d%%"</string>
+    <string name="marker_level_ltmagenta" msgid="3211040937246650422">"Magenta deschis. %1$d%%"</string>
+    <string name="marker_level_violet" msgid="863148315069042084">"Violet. %1$d%%"</string>
+    <string name="marker_level_custom" msgid="346068151037269985">"Culoare personalizată #%1$02X%2$02X%3$02X. %4$d%%"</string>
 </resources>
