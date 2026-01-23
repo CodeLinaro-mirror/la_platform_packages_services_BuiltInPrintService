@@ -60,8 +60,9 @@
     <string name="forget" msgid="892068061425802502">"Κατάργηση απομνημόνευσης"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Συνδέεται μέσω του Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Συνδέεται μέσω του τρέχοντος δικτύου στη διεύθυνση <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
-    <string name="recommendation_summary" msgid="2979700524954307566">"Η υπηρεσία Προεπιλεγμένης εκτύπωσης παρέχει βασικές επιλογές. Κάποια άλλη υπηρεσία εκτύπωσης ενδέχεται να προσφέρει άλλες επιλογές για αυτόν τον εκτυπωτή."</string>
+    <string name="recommendation_summary" msgid="6005124008945335822">"Η υπηρεσία Προεπιλεγμένης εκτύπωσης παρέχει βασικές επιλογές. Για τις σύνθετες επιλογές, διατίθενται πρόσθετες υπηρεσίες εκτύπωσης."</string>
     <string name="recommendations_heading" msgid="5609754983795588470">"Προτεινόμενες υπηρεσίες"</string>
+    <string name="recommendation_link" msgid="8702939483024020023">"Πρόσθετες υπηρεσίες εκτύπωσης"</string>
     <string name="recommendation_install_summary" msgid="374785283809791669">"Επιλέξτε για εγκατάσταση"</string>
     <string name="recommendation_enable_summary" msgid="3500907868251326224">"Επιλέξτε για ενεργοποίηση"</string>
     <string name="recommendation_manage" msgid="6861960243377871340">"Διαχείριση υπηρεσιών"</string>
@@ -76,4 +77,28 @@
     <string name="wifi_direct_permission_rationale" msgid="4671416845852665202">"Η Προεπιλεγμένη υπηρεσία εκτύπωσης χρειάζεται την άδεια Συσκευές σε κοντινή απόσταση για να εντοπίσει κοντινούς εκτυπωτές."</string>
     <string name="fix" msgid="7784394272611365393">"Έλεγχος άδειας"</string>
     <string name="print" msgid="7851318072404916362">"Εκτύπωση"</string>
+    <string name="yes" msgid="8146135396781327533">"Ναι"</string>
+    <string name="unknown" msgid="9141700614096334947">"Άγνωστο"</string>
+    <string name="printer_name" msgid="518518465578369850">"Όνομα εκτυπωτή"</string>
+    <string name="status" msgid="7895525662471923742">"Κατάσταση"</string>
+    <string name="media_ready" msgid="8259402637635303256">"Μεγέθη χαρτιού που έχουν φορτώσει"</string>
+    <string name="supply_levels" msgid="3292306109407433125">"Επίπεδα προμηθειών"</string>
+    <string name="information" msgid="894176958646461459">"Πληροφορίες"</string>
+    <string name="printer_ready" msgid="6343136701327532305">"Έτοιμο"</string>
+    <string name="printer_state__printing" msgid="7991962306019119834">"Εκτύπωση σε εξέλιξη"</string>
+    <string name="printer_state__offline" msgid="2381616555357221771">"Εκτός σύνδεσης"</string>
+    <string name="printer_state__check_printer" msgid="882936062938150000">"Έλεγχος εκτυπωτή"</string>
+    <string name="marker_level_cyan" msgid="5726099418534404112">"Κυανό. %1$d%%"</string>
+    <string name="marker_level_magenta" msgid="3221219396554669048">"Ματζέντα. %1$d%%"</string>
+    <string name="marker_level_yellow" msgid="4648577001843680880">"Κίτρινο. %1$d%%"</string>
+    <string name="marker_level_black" msgid="4206328790507150925">"Μαύρο. %1$d%%"</string>
+    <string name="marker_level_red" msgid="3907122722653274794">"Κόκκινο. %1$d%%"</string>
+    <string name="marker_level_green" msgid="2532882384172262884">"Πράσινο. %1$d%%"</string>
+    <string name="marker_level_blue" msgid="6696226663941024544">"Μπλε. %1$d%%"</string>
+    <string name="marker_level_ltgray" msgid="7833155421911775625">"Ανοιχτό γκρι. %1$d%%"</string>
+    <string name="marker_level_dkgray" msgid="7337253190239376395">"Σκούρο γκρι. %1$d%%"</string>
+    <string name="marker_level_ltcyan" msgid="558183623562750614">"Ανοιχτό κυανό. %1$d%%"</string>
+    <string name="marker_level_ltmagenta" msgid="3211040937246650422">"Ανοιχτό ματζέντα. %1$d%%"</string>
+    <string name="marker_level_violet" msgid="863148315069042084">"Βιολετί. %1$d%%"</string>
+    <string name="marker_level_custom" msgid="346068151037269985">"Προσαρμοσμένο χρώμα #%1$02X%2$02X%3$02X. %4$d%%"</string>
 </resources>

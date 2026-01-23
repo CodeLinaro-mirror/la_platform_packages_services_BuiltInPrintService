@@ -60,8 +60,9 @@
     <string name="forget" msgid="892068061425802502">"Zapomnij"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Łączenie przez Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Łączenie przez bieżącą sieć, adres: <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
-    <string name="recommendation_summary" msgid="2979700524954307566">"Domyślna usługa drukowania udostępnia opcje podstawowe. Inne opcje tej drukarki mogą być dostępne w innej usłudze drukowania."</string>
+    <string name="recommendation_summary" msgid="6005124008945335822">"Domyślna usługa drukowania zapewnia opcje podstawowe. Dostępne są dodatkowe usługi drukowania z opcjami zaawansowanymi."</string>
     <string name="recommendations_heading" msgid="5609754983795588470">"Polecane usługi"</string>
+    <string name="recommendation_link" msgid="8702939483024020023">"Dodatkowe usługi drukowania"</string>
     <string name="recommendation_install_summary" msgid="374785283809791669">"Wybierz, by zainstalować"</string>
     <string name="recommendation_enable_summary" msgid="3500907868251326224">"Wybierz, by włączyć"</string>
     <string name="recommendation_manage" msgid="6861960243377871340">"Zarządzaj usługami"</string>
@@ -76,4 +77,28 @@
     <string name="wifi_direct_permission_rationale" msgid="4671416845852665202">"Domyślna usługa drukowania wymaga uprawnień dotyczących urządzeń w pobliżu do wyszukiwania drukarek w pobliżu."</string>
     <string name="fix" msgid="7784394272611365393">"Sprawdź uprawnienia"</string>
     <string name="print" msgid="7851318072404916362">"Drukuj"</string>
+    <string name="yes" msgid="8146135396781327533">"Tak"</string>
+    <string name="unknown" msgid="9141700614096334947">"Nieznane"</string>
+    <string name="printer_name" msgid="518518465578369850">"Nazwa drukarki"</string>
+    <string name="status" msgid="7895525662471923742">"Stan"</string>
+    <string name="media_ready" msgid="8259402637635303256">"Formaty załadowanego papieru"</string>
+    <string name="supply_levels" msgid="3292306109407433125">"Poziomy materiałów"</string>
+    <string name="information" msgid="894176958646461459">"Informacje"</string>
+    <string name="printer_ready" msgid="6343136701327532305">"Gotowa"</string>
+    <string name="printer_state__printing" msgid="7991962306019119834">"Drukuje"</string>
+    <string name="printer_state__offline" msgid="2381616555357221771">"Offline"</string>
+    <string name="printer_state__check_printer" msgid="882936062938150000">"Sprawdź drukarkę"</string>
+    <string name="marker_level_cyan" msgid="5726099418534404112">"Błękitny. %1$d%%"</string>
+    <string name="marker_level_magenta" msgid="3221219396554669048">"Purpurowy. %1$d%%"</string>
+    <string name="marker_level_yellow" msgid="4648577001843680880">"Żółty. %1$d%%"</string>
+    <string name="marker_level_black" msgid="4206328790507150925">"Czarny. %1$d%%"</string>
+    <string name="marker_level_red" msgid="3907122722653274794">"Czerwony. %1$d%%"</string>
+    <string name="marker_level_green" msgid="2532882384172262884">"Zielony. %1$d%%"</string>
+    <string name="marker_level_blue" msgid="6696226663941024544">"Niebieski. %1$d%%"</string>
+    <string name="marker_level_ltgray" msgid="7833155421911775625">"Jasnoszary. %1$d%%"</string>
+    <string name="marker_level_dkgray" msgid="7337253190239376395">"Ciemnoszary. %1$d%%"</string>
+    <string name="marker_level_ltcyan" msgid="558183623562750614">"Jasnobłękitny. %1$d%%"</string>
+    <string name="marker_level_ltmagenta" msgid="3211040937246650422">"Jasnopurpurowy. %1$d%%"</string>
+    <string name="marker_level_violet" msgid="863148315069042084">"Fioletowy. %1$d%%"</string>
+    <string name="marker_level_custom" msgid="346068151037269985">"Kolor niestandardowy: #%1$02X%2$02X%3$02X. %4$d%%"</string>
 </resources>
