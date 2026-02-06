@@ -1532,14 +1532,26 @@ void parse_printerAttributes(ipp_t *response, printer_capabilities_t *capabiliti
         LOGD("pclm-compression-method-preferred=%s", ippGetString(attrptr, 0, NULL));
     }
 
-    // is device able to rotate back page for duplex jobs? (assume PCLM and PWG are similar)
-    capabilities->canRotateDuplexBackPage = 0;
-    if ((attrptr = ippFindAttribute(response, "pclm-raster-back-side", IPP_TAG_KEYWORD)) == NULL) {
-        attrptr = ippFindAttribute(response, "pwg-raster-document-sheet-back", IPP_TAG_KEYWORD);
-    }
-    if (attrptr != NULL && strcmp(ippGetString(attrptr, 0, NULL), "rotated") != 0) {
-        LOGD("Device can rotate back page for duplex jobs.");
+    if (com_android_bips_flags_mopria_26q2_fixes()) {
+        // can printer rotate back page for duplex jobs? (assume PWG and PCLm are similar)
         capabilities->canRotateDuplexBackPage = 1;
+        if ((attrptr = ippFindAttribute(response, "pwg-raster-document-sheet-back", IPP_TAG_KEYWORD)) == NULL) {
+            attrptr = ippFindAttribute(response, "pclm-raster-back-side", IPP_TAG_KEYWORD);
+        }
+        if (attrptr != NULL && strcmp(ippGetString(attrptr, 0, NULL), "rotated") == 0) {
+            LOGD("Device needs print client to rotate the back side page for duplex jobs.");
+            capabilities->canRotateDuplexBackPage = 0;
+        }
+    } else {
+        // is device able to rotate back page for duplex jobs? (assume PCLM and PWG are similar)
+        capabilities->canRotateDuplexBackPage = 0;
+        if ((attrptr = ippFindAttribute(response, "pclm-raster-back-side", IPP_TAG_KEYWORD)) == NULL) {
+            attrptr = ippFindAttribute(response, "pwg-raster-document-sheet-back", IPP_TAG_KEYWORD);
+        }
+        if (attrptr != NULL && strcmp(ippGetString(attrptr, 0, NULL), "rotated") != 0) {
+            LOGD("Device can rotate back page for duplex jobs.");
+            capabilities->canRotateDuplexBackPage = 1;
+        }
     }
 
     // look for full-bleed supported by looking for 0 on all margins
@@ -1601,19 +1613,53 @@ void parse_printerAttributes(ipp_t *response, printer_capabilities_t *capabiliti
         capabilities->inkjet = 1;
     }
 
-    // determine if device prints pages face-down
     capabilities->faceDownTray = 1;
-    if ((attrptr = ippFindAttribute(response, "output-bin-supported", IPP_TAG_KEYWORD)) != NULL) {
-        if (strstr(ippGetString(attrptr, 0, NULL), "face-up") != NULL) {
-            capabilities->faceDownTray = 0;
+    ipp_attribute_t *bins_supported, *default_bin, *output_trays;
+    bins_supported = ippFindAttribute(response, "output-bin-supported", IPP_TAG_KEYWORD);
+    default_bin = ippFindAttribute(response, "output-bin-default", IPP_TAG_KEYWORD);
+    output_trays = ippFindAttribute(response, "printer-output-tray", IPP_TAG_STRING);
+    int default_bin_index = -1;
+
+    // Determine page order, logic as per
+    // https://ftp.pwg.org/pub/pwg/candidates/cs-ippnodriver20-20230301-5100.13.pdf Sec 6.6.10
+    if (com_android_bips_flags_mopria_26q2_fixes() &&
+            default_bin && bins_supported && output_trays) {
+        const char* default_bin_value = ippGetString(default_bin, 0, NULL);
+        for (i = 0; i < ippGetCount(bins_supported); i++) {
+            if (strcmp(default_bin_value,
+                       ippGetString(bins_supported, i, NULL)) == 0) {
+                default_bin_index = i;
+                break;
+            }
         }
-    }
-    if ((attrptr = ippFindAttribute(response, "printer-output-tray", IPP_TAG_STRING)) != NULL) {
-        for (i = 0; i < ippGetCount(attrptr); i++) {
+        if (default_bin_index > -1) {
             int length = 0;
-            const char *tray_str = ippGetOctetString(attrptr, i, &length);
-            if (length > 0 && strnstr(tray_str, "faceUp", (size_t)length) != NULL) {
+            const char *default_bin_tray = ippGetOctetString(output_trays, default_bin_index,
+                                                             &length);
+            if (length > 0) {
+                LOGD("printer-output-tray properties at index %d : %s ",
+                     default_bin_index, default_bin_tray);
+                if (strnstr(default_bin_tray, "pagedelivery=faceUp",
+                            (size_t) length) != NULL) {
+                    capabilities->faceDownTray = 0;
+                }
+            }
+        }
+    } else {
+        if ((attrptr = ippFindAttribute(response, "output-bin-supported", IPP_TAG_KEYWORD)) !=
+            NULL) {
+            if (strstr(ippGetString(attrptr, 0, NULL), "face-up") != NULL) {
                 capabilities->faceDownTray = 0;
+            }
+        }
+        if ((attrptr = ippFindAttribute(response, "printer-output-tray", IPP_TAG_STRING)) != NULL) {
+            for (i = 0; i < ippGetCount(attrptr); i++) {
+                int length = 0;
+                const char *tray_str = ippGetOctetString(attrptr, i, &length);
+                if (length > 0 &&
+                    strnstr(tray_str, "faceUp", (size_t) length) != NULL) {
+                    capabilities->faceDownTray = 0;
+                }
             }
         }
     }
